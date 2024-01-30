@@ -1,4 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3x0bj2kuxf5j"]
+[gd_scene load_steps=22 format=3 uid="uid://c3x0bj2kuxf5j"]
+
+[ext_resource type="PackedScene" uid="uid://b0q0bnia378s4" path="res://Scenes/Player.tscn" id="1_uuvtd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tqavs"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2i8ww"]
+sky_material = SubResource("ProceduralSkyMaterial_tqavs")
+
+[sub_resource type="Environment" id="Environment_w2h63"]
+background_mode = 2
+sky = SubResource("Sky_2i8ww")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_i5ht5"]
 size = Vector3(30, 1, 20)
@@ -35,15 +50,24 @@ metallic = 0.53
 metallic_specular = 0.0
 rim_enabled = true
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7m24r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvmjc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wlf5v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f25f4"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmvuh"]
+
 [node name="level1" type="Node3D"]
 metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w2h63")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.29584)
@@ -94,7 +118,7 @@ transform = Transform3D(0.99394, 0, 0, 0, 0.99394, 0, 0, 0, 0.99394, 0, 0, 0)
 shape = SubResource("CylinderShape3D_fl0os")
 
 [node name="pill" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1862, 0.136497, 3.48959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24856, 3.33756, -4.30372)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pill"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457973, 1.83624, 0.0975902)
@@ -114,11 +138,11 @@ mesh = SubResource("PrismMesh_762c2")
 surface_material_override/0 = SubResource("StandardMaterial3D_h8836")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piramid"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000936598, 1.41745, 0)
-shape = SubResource("SphereShape3D_7m24r")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329631, 1.18699, 0)
+shape = SubResource("BoxShape3D_qvmjc")
 
 [node name="Plane" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30727, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30727, -0.0875192)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108187, 4.76837e-07, -0.2336)
@@ -139,13 +163,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f25f4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705624, -0.0106459, -0.00126338)
 
-[node name="Text" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30727, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Text"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text"]
-
 [node name="Piramid2" type="Node3D" parent="."]
 transform = Transform3D(0.260302, -0.965527, 0, 0.965527, 0.260302, 0, 0, 0, 1, 1.88605, 1.2904, -2.20841)
 
@@ -156,11 +173,11 @@ skeleton = NodePath("../../Piramid2")
 surface_material_override/0 = SubResource("StandardMaterial3D_h8836")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piramid2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000936508, 1.41745, 0)
-shape = SubResource("SphereShape3D_7m24r")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954053, 1.73712, -2.02914)
+shape = SubResource("BoxShape3D_wmvuh")
 
 [node name="pill2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26682, 0.272994, 4.26054)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 3.17171, 3.7161, -7.82505)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pill2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457973, 1.83624, 0.0975902)
@@ -171,3 +188,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ohfdo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pill2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00090313, 1.85493, 0.117778)
 shape = SubResource("CapsuleShape3D_w34a0")
+
+[node name="Player" parent="." instance=ExtResource("1_uuvtd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39798, 2.63539)
