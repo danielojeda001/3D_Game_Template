@@ -1,0 +1,173 @@
+[gd_scene load_steps=17 format=3 uid="uid://c3x0bj2kuxf5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i5ht5"]
+size = Vector3(30, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4vcb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jnx1"]
+size = Vector3(30, 1, 20)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iqax1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydr2r"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fjfi1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fveao"]
+albedo_color = Color(0, 0.576471, 0.247059, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fl0os"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5u1nx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohfdo"]
+albedo_color = Color(0.0823529, 1, 1, 1)
+metallic = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w34a0"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_762c2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8836"]
+albedo_color = Color(0.933333, 0, 0.631373, 1)
+metallic = 0.53
+metallic_specular = 0.0
+rim_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7m24r"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wlf5v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f25f4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="level1" type="Node3D"]
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.29584)
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.193047)
+mesh = SubResource("BoxMesh_i5ht5")
+surface_material_override/0 = SubResource("StandardMaterial3D_t4vcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_7jnx1")
+
+[node name="Tree2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36357, 1.53795, 4.19502)
+
+[node name="Trunck" type="MeshInstance3D" parent="Tree2"]
+mesh = SubResource("CylinderMesh_iqax1")
+skeleton = NodePath("../../Tree2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ydr2r")
+
+[node name="Leaves" type="MeshInstance3D" parent="Tree2"]
+transform = Transform3D(2.46948, 0, 0, 0, 1.33305, 0, 0, 0, 2.10404, 0, 1.08272, 0)
+lod_bias = 0.001
+mesh = SubResource("SphereMesh_fjfi1")
+skeleton = NodePath("../../Tree2")
+surface_material_override/0 = SubResource("StandardMaterial3D_fveao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree2"]
+transform = Transform3D(0.99394, 0, 0, 0, 0.99394, 0, 0, 0, 0.99394, 0, 0, 0)
+shape = SubResource("CylinderShape3D_fl0os")
+
+[node name="Tree" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18178, 1.48262, 0.054585)
+
+[node name="Trunck" type="MeshInstance3D" parent="Tree"]
+mesh = SubResource("CylinderMesh_iqax1")
+surface_material_override/0 = SubResource("StandardMaterial3D_ydr2r")
+
+[node name="Leaves" type="MeshInstance3D" parent="Tree"]
+transform = Transform3D(2.46948, 0, 0, 0, 1.33305, 0, 0, 0, 2.10404, -0.00345135, 1.08657, -0.0265468)
+lod_bias = 0.001
+mesh = SubResource("SphereMesh_fjfi1")
+surface_material_override/0 = SubResource("StandardMaterial3D_fveao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree"]
+transform = Transform3D(0.99394, 0, 0, 0, 0.99394, 0, 0, 0, 0.99394, 0, 0, 0)
+shape = SubResource("CylinderShape3D_fl0os")
+
+[node name="pill" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1862, 0.136497, 3.48959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pill"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457973, 1.83624, 0.0975902)
+mesh = SubResource("CapsuleMesh_5u1nx")
+surface_material_override/0 = SubResource("StandardMaterial3D_ohfdo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pill"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00090313, 1.85493, 0.117778)
+shape = SubResource("CapsuleShape3D_w34a0")
+
+[node name="Piramid" type="Node3D" parent="."]
+transform = Transform3D(0.793821, -0.608152, 0, 0.608152, 0.793821, 0, 0, 0, 1, -0.0895852, 0.34222, -3.32557)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piramid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0265603, 1.41421, -0.00654793)
+mesh = SubResource("PrismMesh_762c2")
+surface_material_override/0 = SubResource("StandardMaterial3D_h8836")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piramid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000936598, 1.41745, 0)
+shape = SubResource("SphereShape3D_7m24r")
+
+[node name="Plane" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30727, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108187, 4.76837e-07, -0.2336)
+mesh = SubResource("PlaneMesh_wlf5v")
+surface_material_override/0 = SubResource("StandardMaterial3D_f25f4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705624, -0.0106459, -0.00126338)
+
+[node name="Plane2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61455, -8.07067)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108187, 4.76837e-07, -0.2336)
+mesh = SubResource("PlaneMesh_wlf5v")
+surface_material_override/0 = SubResource("StandardMaterial3D_f25f4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705624, -0.0106459, -0.00126338)
+
+[node name="Text" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30727, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Text"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text"]
+
+[node name="Piramid2" type="Node3D" parent="."]
+transform = Transform3D(0.260302, -0.965527, 0, 0.965527, 0.260302, 0, 0, 0, 1, 1.88605, 1.2904, -2.20841)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Piramid2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675563, 1.58918, -3.30735)
+mesh = SubResource("PrismMesh_762c2")
+skeleton = NodePath("../../Piramid2")
+surface_material_override/0 = SubResource("StandardMaterial3D_h8836")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Piramid2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000936508, 1.41745, 0)
+shape = SubResource("SphereShape3D_7m24r")
+
+[node name="pill2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26682, 0.272994, 4.26054)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pill2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457973, 1.83624, 0.0975902)
+mesh = SubResource("CapsuleMesh_5u1nx")
+skeleton = NodePath("../../pill2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ohfdo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pill2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00090313, 1.85493, 0.117778)
+shape = SubResource("CapsuleShape3D_w34a0")
