@@ -205,7 +205,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0447044, 1.85493, 0.117778
 shape = SubResource("CapsuleShape3D_w34a0")
 
 [node name="Player" parent="." instance=ExtResource("1_uuvtd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57585, 4.3379, 3.0589)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445042, 1.74849, 3.0589)
+jump_height = 2.0
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55245, 1.30727, -0.0875192)
