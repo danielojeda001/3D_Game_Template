@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn0m4iw4s5x3f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mm3co"]
+top_radius = 0.4
+bottom_radius = 0.8
+height = 1.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_42rcx"]
+radius = 0.3
+height = 0.6
+
+[node name="Column" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_mm3co")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302939, 0.881842, 0)
+mesh = SubResource("SphereMesh_42rcx")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283832, 0.881842, 0)
+mesh = SubResource("SphereMesh_42rcx")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00401545, 1.39489, 0)
+mesh = SubResource("SphereMesh_42rcx")
