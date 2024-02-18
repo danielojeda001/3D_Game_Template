@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://o0ubla0qtwso"]
+[gd_scene load_steps=6 format=3 uid="uid://o0ubla0qtwso"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_teg5l"]
+albedo_color = Color(0.796078, 0.278431, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jygts"]
 top_radius = 1.0
 bottom_radius = 1.0
 height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d1fo"]
+albedo_color = Color(0.615686, 0.290196, 0.0666667, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hsqja"]
 top_radius = 0.4
@@ -16,11 +22,13 @@ size = Vector3(2, 2, 2)
 [node name="Round_Table" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11134, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.821977, 0)
+material_override = SubResource("StandardMaterial3D_teg5l")
 mesh = SubResource("CylinderMesh_jygts")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.292643, 0)
+material_override = SubResource("StandardMaterial3D_2d1fo")
 mesh = SubResource("CylinderMesh_hsqja")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
