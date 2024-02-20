@@ -149,7 +149,7 @@ mesh = SubResource("BoxMesh_i5ht5")
 surface_material_override/0 = SubResource("StandardMaterial3D_t4vcb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26231, 0, -27.6998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20591, 0.863927, -28.7148)
 shape = SubResource("BoxShape3D_7jnx1")
 
 [node name="Walls" type="Node3D" parent="."]
@@ -200,7 +200,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_knw22")
 transform = Transform3D(-0.986734, 0, -0.162344, 0, 1, 0, 0.162344, 0, -0.986734, 26.3264, 7.76809, 47.8461)
 
 [node name="Camera4" parent="Cameras" instance=ExtResource("2_lerqh")]
-transform = Transform3D(-0.986734, 0, -0.162344, 0, 1, 0, 0.162344, 0, -0.986734, -7.70368, 7.76809, 47.8461)
+transform = Transform3D(-0.986734, 0, -0.162344, 0, 1, 0, 0.162344, 0, -0.986734, -7.70368, 6.42713, 52.5913)
 
 [node name="Camera2" parent="Cameras" instance=ExtResource("2_lerqh")]
 transform = Transform3D(-0.986734, 0, -0.162344, 0, 1, 0, 0.162344, 0, -0.986734, 44.7716, 7.76809, 47.8461)
@@ -242,7 +242,7 @@ transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 
 transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, -10.8595, 1.00624, 52.1474)
 
 [node name="Character_1" parent="." instance=ExtResource("7_ymo67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1286, 0.5, 18.1728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1286, 0.5, 17.9109)
 
 [node name="Character_HC" parent="." instance=ExtResource("8_0aqnu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9388, 0.654043, 15.8675)
