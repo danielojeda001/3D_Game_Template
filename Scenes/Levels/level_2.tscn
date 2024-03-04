@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0q0bnia378s4" path="res://Scenes/Player.tscn" id="1_k8585"]
 [ext_resource type="Script" path="res://addons/csg_mesher/src/CSGMesher.gd" id="1_wo120"]
-[ext_resource type="PackedScene" uid="uid://x7jdhsod07o5" path="res://Scenes/COmponents/tree.tscn" id="3_bssif"]
+[ext_resource type="PackedScene" uid="uid://x7jdhsod07o5" path="res://Scenes/Components/tree.tscn" id="3_bssif"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_32tln"]
 _surfaces = [{
