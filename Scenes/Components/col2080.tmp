@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lgaepodmtgof"]
+
+[ext_resource type="PackedScene" uid="uid://djletaaqep4ft" path="res://Models/Stapler.glb" id="1_nddb0"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_wtm14"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u67gg"]
+
+[node name="Collectable" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.704146, -0.253918)
+collision_layer = 4
+script = ExtResource("1_wtm14")
+
+[node name="Stapler" parent="." instance=ExtResource("1_nddb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.277102, 0, -0.172199)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05872, 0.243614, 0.337076)
+shape = SubResource("SphereShape3D_u67gg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
