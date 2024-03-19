@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtjy70ovu0oad"]
+
+[ext_resource type="PackedScene" uid="uid://drplqpy1ty0pq" path="res://Models/Vase.glb" id="1_6f8ye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5mqj"]
+size = Vector3(1, 1.16553, 1)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00175938, 0.999998, 0.000780772, -0.999222, -0.00178875, 0.039402, -1.03239, 4.20627, 3.75733)
+collision_layer = 8
+mass = 0.1
+
+[node name="Vase" parent="." instance=ExtResource("1_6f8ye")]
+transform = Transform3D(1, -2.32831e-10, 2.23517e-08, 0, 1, 2.91038e-11, -2.23517e-08, 3.34694e-10, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -1.7928e-08, 2.45869e-07, -1.40863e-08, 1, 4.36557e-10, -8.23289e-07, 9.95351e-09, 1, -4.76837e-07, 0.417235, 5.96046e-08)
+shape = SubResource("BoxShape3D_x5mqj")
