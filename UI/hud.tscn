@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://c65dwoq3mufwf"]
+
+[ext_resource type="Texture2D" uid="uid://bbgwjjyg1e8fc" path="res://UI/stapler_icon.png" id="1_1tgvq"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+scale = Vector2(1.10198, 1.20335)
+texture = ExtResource("1_1tgvq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 23.0
+text = "Done"
