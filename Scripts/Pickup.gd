@@ -3,7 +3,7 @@ extends Area3D
 @onready var hand = $"../Hand"
 @onready var camera = $".."
 
-var pull_speed = 2
+var pull_speed = 4
 var throw_speed = 8
 
 var pickup_object = null
@@ -37,7 +37,7 @@ func _unhandled_input(_event):
 			else:
 				# pick up object
 				is_picked = true
-				$"../../Pickup".play()
+				#$"../../Pickup".play()
 	
 	# detect user clicked throw
 	if Input.is_action_just_pressed("throw"):
@@ -46,11 +46,12 @@ func _unhandled_input(_event):
 		# add an upward direction
 		dir = dir + Vector3(0, 1, 0)
 		# apply force in direction with throw_speed
+		print(pickup_object)
 		pickup_object.apply_impulse(dir * throw_speed)
 		# remove object
 		pickup_object = null
 		is_picked = false
-		$"../../Throw".play()
+		#$"../../Throw".play()
 
 func _on_body_entered(body):
 	# first check if an object is picked up
