@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b77jy60tmnhpg" path="res://Audio/water-droplet-6-165636.mp3" id="11_0ejo7"]
 [ext_resource type="PackedScene" uid="uid://c5siphuqx8ngi" path="res://Scenes/Components/ToiletPaper.tscn" id="12_aiwd0"]
 [ext_resource type="PackedScene" uid="uid://bckiwlcx708lc" path="res://Models/ToiletPaper.glb" id="13_ldq17"]
-[ext_resource type="PackedScene" uid="uid://4xhvxk6s0ut2" path="res://Models/Paper_Clip.glb" id="14_mcvgp"]
+[ext_resource type="PackedScene" uid="uid://dfvdydk73wcsg" path="res://Models/PaperClips.glb" id="15_u01bt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vccth"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -284,7 +284,7 @@ transform = Transform3D(-0.978957, 0, -0.204069, 0, 1, 0, 0.204069, 0, -0.978957
 [node name="Vase_Node" type="Node3D" parent="."]
 
 [node name="Vase" parent="Vase_Node" instance=ExtResource("1_qxnr7")]
-transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00175938, 0.999998, 0.000780772, -0.999222, -0.00178875, 0.039402, 8.76201, 2.12011, 1.42431)
+transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00125363, 0.999999, 0.000760829, -0.999223, -0.00128261, 0.0394024, 8.76201, 0.61262, 1.42431)
 mass = 5.0
 
 [node name="Vase2" parent="Vase_Node" instance=ExtResource("1_qxnr7")]
@@ -294,7 +294,9 @@ transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00175938, 0.999998
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.10475, 0.749358, -1.79012)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, -0.000275848, 0.000108741, 0.000275847, 1, 1.08587e-05, -0.000108745, -1.08181e-05, 1, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_vkmll")
+metadata/_edit_group_ = true
 
 [node name="NewOffice" parent="NavigationRegion3D" instance=ExtResource("2_x6pfp")]
 
@@ -642,8 +644,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4883, 0.255522, 11.7146)
 
 [node name="Jumping_boxes" type="Node3D" parent="."]
 
-[node name="Paper_Clip" parent="." instance=ExtResource("14_mcvgp")]
-transform = Transform3D(-0.407805, 0.913069, 0, -0.505776, -0.225895, -0.832564, -0.760188, -0.339523, 0.553929, 12.9568, 1.8154, -1.753)
+[node name="ToiletPaper5" parent="." instance=ExtResource("13_ldq17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4579, 0.214467, -0.405706)
+
+[node name="PaperClips" parent="." instance=ExtResource("15_u01bt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8049, 1.2863, 0.378696)
 
 [connection signal="body_entered" from="respawn_mesh" to="respawn_mesh" method="_on_body_entered"]
 
