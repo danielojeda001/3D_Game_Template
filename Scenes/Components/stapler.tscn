@@ -6,16 +6,17 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_u67gg"]
 radius = 0.356227
 
-[node name="Collectable" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.704146, -0.253918)
+[node name="stapler" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.69049, -0.253918)
 collision_layer = 4
 script = ExtResource("1_wtm14")
+type = "stapler"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140341, 0.339647, 0.495479)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140341, 0.0911076, 0.174907)
 shape = SubResource("SphereShape3D_u67gg")
 
-[node name="Stapler" parent="." instance=ExtResource("1_nddb0")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.463208, 0.310878, 0.704146)
+[node name="Stapler2" parent="." instance=ExtResource("1_nddb0")]
+transform = Transform3D(0.982632, 8.11125e-09, 0.185564, -0.183974, 0.13063, 0.974212, -0.0242402, -0.991431, 0.128361, -0.213946, 0.464532, 0.238837)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5siphuqx8ngi"]
+[gd_scene load_steps=4 format=3 uid="uid://c5siphuqx8ngi"]
 
-[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_eg5nl"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_uxxyy"]
+[ext_resource type="PackedScene" uid="uid://bckiwlcx708lc" path="res://Models/ToiletPaper.glb" id="2_c42nx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u67gg"]
 radius = 0.0999103
 
-[node name="Collectable" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.704146, -0.253918)
+[node name="ToiletPaper" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.908922, -0.253918)
 collision_layer = 4
-script = ExtResource("1_eg5nl")
+script = ExtResource("1_uxxyy")
+type = "ToiletPaper"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140341, 0.339647, 0.565105)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127192, 0.322434, 0.839431)
 shape = SubResource("SphereShape3D_u67gg")
+
+[node name="ToiletPaper" parent="." instance=ExtResource("2_c42nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173496, -0.788788, 0.704146)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

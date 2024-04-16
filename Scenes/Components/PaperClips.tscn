@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4nbnhi474rom"]
+
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_70okx"]
+[ext_resource type="PackedScene" uid="uid://4xhvxk6s0ut2" path="res://Models/Paper_Clip.glb" id="2_1qcj0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u67gg"]
+radius = 0.0999103
+
+[node name="PaperClip" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.908922, -0.253918)
+collision_layer = 4
+script = ExtResource("1_70okx")
+type = "PaperClip"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127192, 0.322434, 0.839431)
+shape = SubResource("SphereShape3D_u67gg")
+
+[node name="Paper_Clip" parent="." instance=ExtResource("2_1qcj0")]
+transform = Transform3D(1, 0, 0, 0, -0.0379169, 0.999281, 0, -0.999281, -0.0379169, 0.0119078, 0.236732, 0.437467)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,24 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://c65dwoq3mufwf"]
+[gd_scene load_steps=5 format=3 uid="uid://c65dwoq3mufwf"]
 
 [ext_resource type="Texture2D" uid="uid://bbgwjjyg1e8fc" path="res://UI/stapler_icon.png" id="1_1tgvq"]
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_3kmip"]
+[ext_resource type="Texture2D" uid="uid://bjx3440jnfona" path="res://UI/TPaperIcon.png" id="2_dcyxb"]
+[ext_resource type="Texture2D" uid="uid://uhl10yxd3pdu" path="res://UI/ClipsIcon.png" id="2_s2xbi"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3kmip")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="ToiletPaler" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_right = 41.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_right = 62.0
+offset_bottom = 64.0
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+[node name="TextureRect2" type="TextureRect" parent="ToiletPaler"]
+layout_mode = 2
+texture = ExtResource("2_dcyxb")
+
+[node name="ToiletCount" type="Label" parent="ToiletPaler"]
+layout_mode = 2
+text = "0"
+
+[node name="Stapler" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 63.0
+offset_right = 64.0
+offset_bottom = 137.0
+
+[node name="TextureRect2" type="TextureRect" parent="Stapler"]
 layout_mode = 2
 texture = ExtResource("1_1tgvq")
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="StaplerCount" type="Label" parent="Stapler"]
+layout_mode = 2
+text = "0"
+
+[node name="Clips" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = -3.0
+offset_top = 129.0
+offset_right = 61.0
+offset_bottom = 193.0
+
+[node name="TextureRect2" type="TextureRect" parent="Clips"]
+layout_mode = 2
+texture = ExtResource("2_s2xbi")
+
+[node name="Label" type="Label" parent="Clips"]
+layout_mode = 2
+text = "0"
+
+[node name="Pen" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = -3.0
+offset_top = 200.0
+offset_right = 61.0
+offset_bottom = 264.0
+
+[node name="TextureRect2" type="TextureRect" parent="Pen"]
+layout_mode = 2
+texture = ExtResource("2_s2xbi")
+
+[node name="Label" type="Label" parent="Pen"]
 layout_mode = 2
 text = "0"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhsblbytxyg0v"]
+
+[ext_resource type="PackedScene" uid="uid://hlblyrh5ic1r" path="res://Models/chair.glb" id="1_dkxkx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_82ehk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h764r"]
+size = Vector3(1, 1.30139, 1.39526)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+mass = 0.14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transparency = 1.0
+mesh = SubResource("BoxMesh_82ehk")
+
+[node name="chair" parent="MeshInstance3D" instance=ExtResource("1_dkxkx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150696, -0.0418701)
+shape = SubResource("BoxShape3D_h764r")

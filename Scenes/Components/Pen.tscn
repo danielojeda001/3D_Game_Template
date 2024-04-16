@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwrihglq4706"]
+
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_7ngs2"]
+[ext_resource type="PackedScene" uid="uid://dgxvp2gmre3fw" path="res://Models/pencil.glb" id="2_55v0l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u67gg"]
+radius = 0.356227
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77tx6"]
+albedo_color = Color(0.764706, 0.764706, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[node name="Pen" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.69049, -0.100055)
+collision_layer = 4
+script = ExtResource("1_7ngs2")
+type = "Pen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140341, 0.0911076, 0.174907)
+shape = SubResource("SphereShape3D_u67gg")
+
+[node name="pencil" parent="." instance=ExtResource("2_55v0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00545079, 0.0511595, 0.235893)
+
+[node name="Cylinder" parent="pencil" index="0"]
+material_override = SubResource("StandardMaterial3D_77tx6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="pencil"]

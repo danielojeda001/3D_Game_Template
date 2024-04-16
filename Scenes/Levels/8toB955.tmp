@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bckiwlcx708lc" path="res://Models/ToiletPaper.glb" id="13_ldq17"]
 [ext_resource type="PackedScene" uid="uid://bhsblbytxyg0v" path="res://Scenes/Components/chair.tscn" id="16_44wy4"]
 [ext_resource type="PackedScene" uid="uid://djwrihglq4706" path="res://Scenes/Components/Pen.tscn" id="17_axvko"]
-[ext_resource type="PackedScene" uid="uid://d4nbnhi474rom" path="res://Scenes/Components/PaperClips.tscn" id="17_vyy0m"]
+[ext_resource type="PackedScene" uid="uid://d4nbnhi474rom" path="res://Scenes/Components/PaperClips.tscn" id="17_ph5ws"]
 [ext_resource type="PackedScene" uid="uid://ds3jyqsl2an6b" path="res://Scenes/Components/portal.tscn" id="18_jw324"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vccth"]
@@ -584,7 +584,6 @@ material_override = SubResource("StandardMaterial3D_vodlg")
 mesh = SubResource("BoxMesh_7dx7s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D4"]
-collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jqr2g")
@@ -639,7 +638,6 @@ mesh = SubResource("BoxMesh_ndays")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D9"]
-collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_weegs")
@@ -686,7 +684,6 @@ mesh = SubResource("BoxMesh_vegqe")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D8"]
-collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_lk513")
@@ -759,13 +756,13 @@ collision_layer = 64
 level_to_load = "res://Scenes/Levels/level_1.tscn"
 
 [node name="Vase2" parent="." instance=ExtResource("1_qxnr7")]
-transform = Transform3D(0.0394034, -0.000710855, 0.999223, 0.997471, -0.0591758, -0.0393763, 0.0591578, 0.998247, -0.00162268, -5.77649, 1.44371, -3.43467)
+transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00175938, 0.999998, 0.000780772, -0.999222, -0.00178875, 0.039402, -5.77649, 1.44371, -3.43467)
 
 [node name="Pen" parent="." instance=ExtResource("17_axvko")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -12.5563, 1.80062, -14.0422)
 
-[node name="PaperClip" parent="." instance=ExtResource("17_vyy0m")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.52324, 1.86253, -1.93041)
+[node name="PaperClip" parent="." instance=ExtResource("17_ph5ws")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.00184, 2.80572, -2.93447)
 
 [connection signal="visibility_changed" from="." to="UI/HUD" method="_on_plastic_office_scene_visibility_changed"]
 [connection signal="visibility_changed" from="Collectibles" to="UI/HUD" method="_on_collectibles_visibility_changed"]
