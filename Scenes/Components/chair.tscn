@@ -8,6 +8,8 @@
 size = Vector3(1, 1.30139, 1.39526)
 
 [node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 40
+collision_mask = 17
 mass = 0.14
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

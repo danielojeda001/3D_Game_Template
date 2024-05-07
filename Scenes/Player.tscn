@@ -30,15 +30,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.1, 2.08165e-12
 [node name="Pickuparea" type="Area3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.38293, -1.14435)
 collision_layer = 16
-collision_mask = 32
+collision_mask = 48
 script = ExtResource("2_hcgmu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/Pickuparea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269335, 0.491049, 0.283854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269335, 0.491049, 0.155008)
 shape = SubResource("BoxShape3D_7mhtf")
 
 [node name="Hand" type="Marker3D" parent="Camera"]
-transform = Transform3D(1.00002, 0, 0, 0, 1.00002, 0, 0, 0, 1.00002, -0.00418931, -1.32458, -0.75398)
+transform = Transform3D(1.00002, 0, 0, 0, 1.00002, 0, 0, 0, 1.00002, -0.00418931, -1.32458, -1.00965)
 
 [node name="Jump_Sound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.99998, 0, 0, 0, 0.99998, 0, 0, 0, 0.99998, 0, -0.99998, 0)

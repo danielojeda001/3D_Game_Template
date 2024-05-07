@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl3veuesxsk8w"]
+
+[ext_resource type="PackedScene" uid="uid://drplqpy1ty0pq" path="res://Models/Vase.glb" id="1_ftmoa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e17qx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8c6a"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(0.0394034, -0.000710855, 0.999223, -0.00175938, 0.999998, 0.000780772, -0.999222, -0.00178875, 0.039402, 6.76468, 1.70161, -2.14882)
+collision_layer = 32
+collision_mask = 3
+mass = 0.02
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -4.65661e-10, 1.04308e-07, -8.14907e-10, 1, 1.74623e-10, -1.04308e-07, 1.62254e-09, 1, -2.46475, -1.19668, -6.68073)
+transparency = 1.0
+mesh = SubResource("BoxMesh_e17qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -4.65661e-10, 1.04308e-07, -8.14907e-10, 1, 1.74623e-10, -1.04308e-07, 1.62254e-09, 1, -2.46475, -1.19668, -6.68073)
+shape = SubResource("BoxShape3D_c8c6a")
+
+[node name="Vase" parent="." instance=ExtResource("1_ftmoa")]
+transform = Transform3D(1, -2.32831e-10, 1.11759e-08, 0, 1, 7.27596e-12, -1.11759e-08, 1.60071e-10, 1, -2.58032, -1.70093, -6.69037)

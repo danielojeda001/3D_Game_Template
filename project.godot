@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://Scripts/global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/size/fullscreen=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csg_mesher/plugin.cfg")
+enabled=PackedStringArray("res://addons/csg_mesher/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [gui]
 
@@ -110,6 +111,10 @@ portal={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://UI/Opening.dialogue")
+
 [layer_names]
 
 3d_physics/layer_1="Player"
@@ -119,6 +124,7 @@ portal={
 3d_physics/layer_5="PickupDetector"
 3d_physics/layer_6="Pickable"
 3d_physics/layer_7="Portal"
+3d_physics/layer_8="PlayerDetector"
 
 [physics]
 
